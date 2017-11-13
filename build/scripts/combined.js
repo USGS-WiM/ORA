@@ -449,7 +449,7 @@ require([
         basemap: 'gray',
         center: gbra.globals.mapCenter,
         spatialReference: 26917,
-        zoom: 8,
+        zoom: 9,
         logo: false,
         minZoom: 8,
         infoWindow: popup
@@ -750,6 +750,7 @@ require([
             require(["esri/geometry/Extent"], function(Extent) {
                 var noExtents = ["GNIS_MAJOR", "GNIS_MINOR", "ZIPCODE", "AREACODE"];
                 var noExtentCheck = noExtents.indexOf(o.result.properties["Source"])
+                $("#geosearchModal").modal('hide');
                 if (noExtentCheck == -1) {
                     map.setExtent(
                         new esri.geometry.Extent({
