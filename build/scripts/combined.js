@@ -449,7 +449,7 @@ require([
         basemap: 'gray',
         center: gbra.globals.mapCenter,
         spatialReference: 26917,
-        zoom: 9,
+        zoom: 8,
         logo: false,
         minZoom: 8,
         infoWindow: popup
