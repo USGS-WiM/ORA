@@ -515,7 +515,7 @@ require([
         }
 
         function printError(event) {
-            alert("Sorry, an unclear print error occurred. Please try refreshing the application to fix the problem");
+            alert("Sorry, unable to print this far zoomed-out, try Zooming in and then printing.");
             $("#printExecuteButton").button('reset');
         }
     }

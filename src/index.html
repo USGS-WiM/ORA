@@ -192,18 +192,18 @@
                           <b>Study Area Boundary:</b> The boundary line for the GBRA study area was determined with the alongshore extent from the opening of the St. Clair River to Au Sable river in Michigan. The offshore boundary is determined by the 3 meter depth contours as estimated by lidar. The landward boundary is determined from the elevation of the maximum Green Bay lake water level height buffered by 1 m of elevation and 1 km inland. For informational purposes only.<br />
                           Source: New College of Florida and U.S. Geological Survey <br />
                           <br />
-                          <b>Oblique Aerial Imagery:</b> These points show the locations of linked ACOE oblique aerial photography from <a href='http://greatlakes.usace.army.mil' target='_blank'>greatlakes.usace.army.mil <i class="fa fa-external-link" aria-hidden="true"></i></a><br />
+                          <!-- <b>Oblique Aerial Imagery:</b> These points show the locations of linked ACOE oblique aerial photography from <a href='http://greatlakes.usace.army.mil' target='_blank'>greatlakes.usace.army.mil <i class="fa fa-external-link" aria-hidden="true"></i></a><br />
                           Source: US Army Corps of Engineers<br />
-                          <br />
-                          <b>Lake Level Stations:</b> Locations of lake level measurements from NOAA CO-OPS. <br />
+                          <br /> -->
+                          <!-- <b>Lake Level Stations:</b> Locations of lake level measurements from NOAA CO-OPS. <br />
                           Source: NOAA CO-OPS <br />
-                          <br />
-                          <b>Wetland Biological Integrity:</b> Plant indicator scores are based on data collected as part of the Great Lakes Coastal Wetland Monitoring Program. Total vegetation indicator scores are based on 10 metrics that collectively evaluate the relative condition of each wetland. Metrics included entire-site and vegetation-zone specific calculations, which are combined into an overall site score. Metric and scoring calculations are described at <a href='http://greatlakeswetlands.org' target='_blank'>greatlakeswetlands.org <i class="fa fa-external-link" aria-hidden="true"></i></a> <br />
+                          <br /> -->
+                          <!-- <b>Wetland Biological Integrity:</b> Plant indicator scores are based on data collected as part of the Great Lakes Coastal Wetland Monitoring Program. Total vegetation indicator scores are based on 10 metrics that collectively evaluate the relative condition of each wetland. Metrics included entire-site and vegetation-zone specific calculations, which are combined into an overall site score. Metric and scoring calculations are described at <a href='http://greatlakeswetlands.org' target='_blank'>greatlakeswetlands.org <i class="fa fa-external-link" aria-hidden="true"></i></a> <br />
                           Source:  Great Lakes Coastal Wetland Monitoring Program <br />
-                          <br />
-                          <b>GLRI Wetland Restoration Areas:</b> Project boundaries digitized from GLRI habitat restoration database. http://habitat.glc.org/ <br />
+                          <br /> -->
+                          <!-- <b>GLRI Wetland Restoration Areas:</b> Project boundaries digitized from GLRI habitat restoration database. http://habitat.glc.org/ <br />
                           Source: New College of Florida <br />
-                          <br />
+                          <br /> -->
                           <span style="font-size: larger"><b>Parameters Group</b></span><br />
                           <b>Water Mask (P0):</b> Areas excluded from the analysis but within study area boundary. Most areas are permanent or perennial water features previously mapped by the National Wetlands Inventory and the National Hydrographic Dataset. <br />
                           Source: New College of Florida, USGS <br />
@@ -342,7 +342,7 @@
                   </form>
 
                   <form id="print-form" class="form-inline">
-                      <button id="printExecuteButton" type="button" class="btn btn-success btn-fixed" data-loading-text="Printing..." > Print </button>
+                      <button id="printExecuteButton" type="button" class="btn btn-success btn-fixed" data-loading-text="Printing..." > Print <i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i><span class="sr-only">Loading...</span> </button>
                       <button id="printDismissButton" class="btn btn-default btn-fixed" data-dismiss="modal"> Dismiss</button>
                   </form>
 
@@ -422,7 +422,9 @@
               <div class="panel panel-default wim-sidebar-panel">
                   <div class="panel-heading" id="layersPanelHeader">
                       <h4 class="panel-title">
-                          <a class="collapsed" data-toggle="collapse" href="#layersPanel" aria-expanded="true" aria-controls="layersPanel">Map Layers</a>
+                        <a class="accordion-toggle" data-toggle="collapse" href="#layersPanel" aria-expanded="true" aria-controls="layersPanel">
+                            Map Layers
+                        </a>
                       </h4>
                   </div>
                   <div id="layersPanel" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="layersPanelHeader">
@@ -611,7 +613,7 @@
                       <!--<div class="btn-group-vertical lyrTogDiv" style="cursor: pointer;" data-toggle="buttons">-->
                       <!--<button id="veg" type="button" class="btn btn-default lyrTog" aria-pressed="true" style="font-weight: bold;text-align: left"><i class="checkBoxIcon fa fa-square-o"></i>&nbsp;&nbsp;Wetland Biological Integrity<span id="opacityveg" class="glyphspan glyphicon glyphicon-adjust pull-right opacity"></span><span class="glyphicon glyphicon-search pull-right zoomto"></span></button>-->
                       <!--</div>-->
-                      <div class="container-fluid container-btn">
+                      <!-- <div class="container-fluid container-btn">
                           <div class="row">
                               <div class="col-xs-9 col-btn">
                                   <div class="btn-group-vertical lyrTogDiv" style="cursor: pointer;" data-toggle="buttons">
@@ -622,7 +624,7 @@
                                   <span id="opacityveg" class="glyphspan glyphicon glyphicon-adjust pull-right opacity"></span></span>
                               </div>
                           </div>
-                      </div>
+                      </div> -->
                       <div class="btn-group-vertical lyrTogDiv" style="cursor: pointer;" data-toggle="buttons">
                           <button id="hydroCondition" class="btn btn-default groupToggle" type="button" data-toggle="collapse" data-target="#hydroConditionGroup"  aria-expanded="false" aria-controls="collapseExample" style="font-weight: bold;text-align: left"><!--<i class="checkBoxIcon fa fa-square-o"></i>-->&nbsp;&nbsp;Hydro Conditioning&nbsp;<i class="chevron fa fa-chevron-right pull-right"></i></button>
                       </div>
@@ -677,7 +679,8 @@
               <div class="panel panel-default wim-sidebar-panel">
                   <div class="panel-heading" id="basemapsHeader">
                       <h4 class="panel-title">
-                          <a data-toggle="collapse"  href="#basemapsPanel" aria-expanded="false" aria-controls="basemapsPanel">Basemaps</a>
+                        <a class="accordion-toggle collapsed" data-toggle="collapse"  href="#basemapsPanel" aria-expanded="false" aria-controls="basemapsPanel">
+                            Basemaps</a>
                       </h4>
                   </div>
                   <div id="basemapsPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="basemapsHeader">
@@ -696,7 +699,7 @@
               <div class="panel panel-default wim-sidebar-panel">
                   <div class="panel-heading" id="zonalStatsHeader">
                       <h4 class="panel-title">
-                          <a data-toggle="collapse"  href="#zonalStatsPanel" aria-expanded="false" aria-controls="zonalStatsPanel">Area Summary Tool</a>
+                          <a class="accordion-toggle collapsed" data-toggle="collapse"  href="#zonalStatsPanel" aria-expanded="false" aria-controls="zonalStatsPanel">Area Summary Tool</a>
                       </h4>
                   </div>
                   <div id="zonalStatsPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="zonalStatsHeader">
@@ -729,7 +732,7 @@
               <div class="panel panel-default wim-sidebar-panel">
                   <div class="panel-heading" id="bookmarksHeader">
                       <h4 class="panel-title">
-                          <a data-toggle="collapse"  href="#bookmarksPanel" aria-expanded="false" aria-controls="bookmarksPanel">Bookmarks</a>
+                          <a class="accordion-toggle collapsed"  data-toggle="collapse"  href="#bookmarksPanel" aria-expanded="false" aria-controls="bookmarksPanel">Bookmarks</a>
                       </h4>
                   </div>
                   <div id="bookmarksPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bookmarksHeader">
