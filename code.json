@@ -54,6 +54,11 @@
         "name": "CRSRA",
         "codeUrl": "https://github.com/USGS-WiM/CRSRA",
         "isGovernmetnRepo": true
+      },
+      {
+        "name": "SBRA",
+        "codeUrl": "https://github.com/USGS-WiM/SBRA",
+        "isGovernmetnRepo": true
       }
 
     ],

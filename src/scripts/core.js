@@ -273,6 +273,7 @@ require([
         console.log("Share URL is:" + shareURL);
         $("#showFullLinkButton").click(function(){
             $("#fullShareURL").html('<span id="fullLinkLabel" class="label label-default"><span class="glyphicon glyphicon-link"></span> Full link</span><br><textarea style="margin-bottom: 10px; cursor: text" class="form-control"  rows="3" readonly>' + shareURL + '</textarea>');
+            gtag('event', 'click', {'event_category': 'Share Modal','event_label': 'Display Full Link'});
         });
 
         $("#showShortLinkButton").click(function(){
@@ -284,6 +285,7 @@ require([
                 success: function (data) {
                     var bitlyURL = data.data.url;
                     $("#bitlyURL").html('<span class="label label-default"><span class="glyphicon glyphicon-link"></span> Bitly link</span><code>' + bitlyURL + '</code>');
+                    gtag('event', 'click', {'event_category': 'Share Modal','event_label': 'Generate Bitly Link'});
                 },
                 error: function (error) {
                     $("#bitlyURL").html('<i class="fa fa-exclamation-triangle"></i> An error occurred retrieving shortened Bitly URL');
@@ -316,6 +318,9 @@ require([
     $('#printExecuteButton').click(function () {
         $(this).button('loading');
         printMap();
+
+        // tracking if a user prints
+        gtag('event', 'click', {'event_category': 'Navbar','event_label': 'Print'});
     });
     //captures the enter key being pressed to print map
     $("#print-title-form").on("keypress", function (e) {
@@ -372,32 +377,55 @@ require([
     });
 
     var nationalMapBasemap = new ArcGISTiledMapServiceLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer', {visible: false});
+    var shadedReliefBasemap = new ArcGISTiledMapServiceLayer('https://server.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer', {visible: false});
+    var referenceMapBasemap = new ArcGISTiledMapServiceLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places_Alternate/MapServer', {visible: false});
+
     map.addLayer(nationalMapBasemap);
+    map.addLayer(shadedReliefBasemap);
+    map.addLayer(referenceMapBasemap);
+    
+
     //on clicks to swap basemap. visibility toggling is required for nat'l map b/c it is not technically a basemap, but a tiled layer.
     on(dom.byId('btnStreets'), 'click', function () {
         map.setBasemap('streets');
         nationalMapBasemap.setVisibility(false);
+        referenceMapBasemap.setVisibility(false);
+        shadedReliefBasemap.setVisibility(false);
     });
     on(dom.byId('btnSatellite'), 'click', function () {
         map.setBasemap('satellite');
         nationalMapBasemap.setVisibility(false);
+        referenceMapBasemap.setVisibility(false);
+        shadedReliefBasemap.setVisibility(false);
     });
     on(dom.byId('btnGray'), 'click', function () {
         map.setBasemap('gray');
         nationalMapBasemap.setVisibility(false);
+        referenceMapBasemap.setVisibility(false);
+        shadedReliefBasemap.setVisibility(false);
     });
     on(dom.byId('btnOSM'), 'click', function () {
         map.setBasemap('osm');
         nationalMapBasemap.setVisibility(false);
+        referenceMapBasemap.setVisibility(false);
+        shadedReliefBasemap.setVisibility(false);
     });
     on(dom.byId('btnTopo'), 'click', function () {
         map.setBasemap('topo');
         nationalMapBasemap.setVisibility(false);
+        referenceMapBasemap.setVisibility(false);
+        shadedReliefBasemap.setVisibility(false);
     });
     on(dom.byId('btnNatlMap'), 'click', function () {
         nationalMapBasemap.setVisibility(true);
+        referenceMapBasemap.setVisibility(false);
+        shadedReliefBasemap.setVisibility(false);
     });
-
+    on(dom.byId('btnShadedRelief'), 'click', function () {
+        referenceMapBasemap.setVisibility(true);
+        shadedReliefBasemap.setVisibility(true);
+        nationalMapBasemap.setVisibility(false);
+    });
     // create search_api widget in element "geosearch"
     search_api.create( "geosearch", {
         on_result: function(o) {
@@ -427,6 +455,7 @@ require([
                             new Point( o.result.properties.Lon, o.result.properties.Lat ),
                             12
                         );
+                        gtag('event', 'click', {'event_category': 'Navbar','event_label': 'Location Search Performed'});
                     });
                 }
 
@@ -539,6 +568,9 @@ require([
             var userBookmarkButton = $('<tr id="'+ userBookmarkID +'"><td  class="bookmarkTitle td-bm">'+ userBookmarkTitle +'</td><td class="text-right text-nowrap"> <button id="'+ bmDeleteID + '" class="btn btn-xs btn-warning bookmarkDelete" data-toggle="tooltip" data-placement="top" > <span class="glyphicon glyphicon-remove"></span> </button> </td> </tr>');
             $("#bookmarkList").append(userBookmarkButton);
 
+            gtag('event', 'click', {'event_category': 'Sidebar','event_label': 'User saved bookmark'});
+            gtag('event', 'input', {'event_category': 'Sidebar','event_label': 'User saved bookmark titled: ' + userBookmarkTitle});
+
             $('#' + bmDeleteID).confirmation({
                 placement: "left",
                 title: "Delete this bookmark?",
@@ -594,7 +626,13 @@ require([
         }
         $('#aboutNav').click(function(){
             showAboutModal();
+
+            // tracking if a user opens the about modal
+            gtag('event', 'click', {'event_category': 'Navbar','event_label': 'About'});
         });
+
+        
+
 
         $('#scaleAlertClose').click(function() {
             $('#parcelSelectScaleAlert').hide();
@@ -884,6 +922,7 @@ require([
             //clickSelectionActive = false;
             //customAreaDraw.activate(Draw.POLYGON);
             //selectionToolbar.activate(Draw.POLYGON);
+            gtag('event', 'click', {'event_category': 'Sidebar','event_label': 'Draw Custom Area'});
         });
 
 
@@ -895,12 +934,13 @@ require([
             customAreaParams = { "inputPoly":null };
             customAreaFeatureArray = [];
         });
-        zonalStatsGP = new Geoprocessor("https://gis.wim.usgs.gov/arcgis/rest/services/GLCWRA/SBRAZonalStats/GPServer/SBRAZonalStats");
+        zonalStatsGP = new Geoprocessor("https://gis.wim.usgs.gov/arcgis/rest/services/GLCWRA/GBRAZonalStats/GPServer/GBRAZonalStats");
         zonalStatsGP.setOutputSpatialReference({wkid:102100});
         zonalStatsGP.on("execute-complete", displayCustomStatsResults);
         $('#calculateStats').click(function () {
             $(this).button('loading');
             zonalStatsGP.execute(customAreaParams);
+            gtag('event', 'click', {'event_category': 'Sidebar','event_label': 'Calculate Stats'});
         });
         on(customAreaDraw, "DrawEnd", function (customAreaGeometry) {
             //var symbol = new SimpleFillSymbol("none", new SimpleLineSymbol("dashdot", new Color([255,0,0]), 2), new Color([255,255,0,0.25]));
@@ -928,6 +968,7 @@ require([
             zonalStatsTable.html('<tr><th>Mean </th><th>Standard Deviation</th><th>Max</th></tr>');
             zonalStatsTable.append('<tr><td>' + results.MEAN.toFixed(4) + '</td><td>' + results.STD.toFixed(3) + '</td><td>' + results.MAX + '</td></tr>');
             $('#zonalStatsModal').modal('show');
+            gtag('event', 'click', {'event_category': 'Sidebar','event_label': 'Display Stats'});
         }
 
         const studyAreaLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "GBRA/MapServer", {id: "studyArea", visible:true} );
@@ -1201,5 +1242,72 @@ require([
         legend.refresh(legendLayers);
         legend.startup();
     });//end of require statement containing legend building code
+
+    $(document).ready(function(){
+    // Google analytics tracking events
+        $('#metadataTab').click(function(){
+            gtag('event', 'click', {'event_category': 'About Modal','event_label': 'Layer Information'});
+        });
+        $('#disclaimerTab').click(function(){
+            gtag('event', 'click', {'event_category': 'About Modal','event_label': 'Disclaimer'});
+        });
+        $('#contactTab').click(function(){
+            gtag('event', 'click', {'event_category': 'About Modal','event_label': 'Contact'});
+        });
+        $('#updatesTab').click(function(){
+            gtag('event', 'click', {'event_category': 'About Modal','event_label': 'Get Updated'});
+        });
+        $('#mailingList').click(function(){
+            gtag('event', 'click', {'event_category': 'About Modal','event_label': 'Link to Mailing List'});
+        });
+        $('#wim_logo').click(function(){
+            gtag('event', 'click', {'event_category': 'WIM Ref','event_label': 'About Footer WIM Ref'});
+        });
+        $('#wimPower').click(function(){
+            gtag('event', 'click', {'event_category': 'WIM Ref','event_label': 'Powered by WIM Ref'});
+        });
+        $('#locateButton').click(function(){
+            gtag('event', 'click', {'event_category': 'Map Button','event_label': 'Find My Location'});
+        });
+        $('#homeButton').click(function(){
+            gtag('event', 'click', {'event_category': 'Map Button','event_label': 'Default Extent'});
+        });
+        $('#normalized').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Restoration Model','event_label': 'GBRA Composite Index'});
+        });
+        $('#waterMask').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Parameters','event_label': 'water Mask (P0)'});
+        });
+        $('#hydroperiod').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Parameters','event_label': 'Hydroperiod (P1)'});
+        });
+        $('#wetsoils').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Parameters','event_label': 'Wetsoils (P2)'});
+        });
+        $('#flowline').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Parameters','event_label': 'Flowline (P3)'});
+        });
+        $('#conservedLands').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Parameters','event_label': 'Conserved Lands (P4)'});
+        });
+        $('#imperviousSurfaces').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Parameters','event_label': 'Impervious Surfaces (P5)'});
+        });
+        $('#landuse').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Parameters','event_label': 'Landuse (P6)'});
+        });
+        $('#studyArea').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Reference','event_label': 'Study Area Boundary'});
+        });
+        $('#culverts').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Hydro Conditioning','event_label': 'Culverts'});
+        });
+        $('#degFlowlines').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Hydro Conditioning','event_label': 'Degree Flowlines'});
+        });
+        $('#dikes').click(function(){
+            gtag('event', 'click', {'event_category': 'Layer - Hydro Conditioning','event_label': 'Dikes'});
+        });
+    });
 });
 
