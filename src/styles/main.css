@@ -725,3 +725,12 @@ input[type="checkbox"], input[type="radio"] {
     /* symbol for "collapsed" panels */
     content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
+
+#meanScore{
+    font-size: 1.2em;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    margin: auto;
+    margin-bottom: 15px;
+  }

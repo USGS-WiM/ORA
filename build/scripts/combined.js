@@ -1311,6 +1311,25 @@ require([
             zonalStatsTable.append('<tr><td>' + results.MEAN.toFixed(4) + '</td><td>' + results.STD.toFixed(3) + '</td><td>' + results.MAX + '</td></tr>');
             $('#zonalStatsModal').modal('show');
             gtag('event', 'click', {'event_category': 'Sidebar','event_label': 'Display Stats'});
+
+
+            // Restorability blurb at the top of the zonalStatsModal
+            if ((results.MEAN) < 23) {
+                $("#meanScore").html('The selected area is unlikely to be restored');
+                $("#meanScore").css('background-color', '#FFFFFF');
+            } else if ((23 < (results.MEAN)) && ((results.MEAN) < 50)) {
+                $("#meanScore").html('The selected area has low restorability');
+                $("#meanScore").css('background-color', '#F5FEBC');
+            } else if ((50 < (results.MEAN)) && ((results.MEAN)  < 75)) {
+                $("#meanScore").html('The selected area has medium restorability');
+                $("#meanScore").css('background-color', '#ABDE90');
+            } else if ((results.MEAN) > 75) {
+                $("#meanScore").html('The selected area has high restorability');
+                $("#meanScore").css('background-color', '#36A35A');
+                $("#meanScore").css('color', 'white');
+            } else {
+                $("#meanScore").css('display', 'none');
+            }
         }
 
         const studyAreaLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "GBRA/MapServer", {id: "studyArea", visible:true} );
