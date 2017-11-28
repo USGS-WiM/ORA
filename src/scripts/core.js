@@ -975,12 +975,15 @@ require([
             if ((results.MEAN) < 23) {
                 $("#meanScore").html('The selected area is unlikely to be restored');
                 $("#meanScore").css('background-color', '#FFFFFF');
+                $("#meanScore").css('color', 'black');
             } else if ((23 < (results.MEAN)) && ((results.MEAN) < 50)) {
                 $("#meanScore").html('The selected area has low restorability');
                 $("#meanScore").css('background-color', '#F5FEBC');
+                $("#meanScore").css('color', 'black');
             } else if ((50 < (results.MEAN)) && ((results.MEAN)  < 75)) {
                 $("#meanScore").html('The selected area has medium restorability');
                 $("#meanScore").css('background-color', '#ABDE90');
+                $("#meanScore").css('color', 'black');
             } else if ((results.MEAN) > 75) {
                 $("#meanScore").html('The selected area has high restorability');
                 $("#meanScore").css('background-color', '#36A35A');
