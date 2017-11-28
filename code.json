@@ -3,7 +3,7 @@
     "name": "GBRA",
     "organization": "U.S. Geological Survey",
     "description": "Web interface for the Green Bay Restoration Area of the Great Lakes Coastal Restoration Assessment project",
-    "version": "v0.0.0",
+    "version": "v1.0.0-alpha.1",
     "status": "Development",
 
     "permissions": {
@@ -63,8 +63,8 @@
 
     ],
     "date": {
-      "lastModified": "2017-11-09",
-      "metadataLastUpdated": "2017-11-09"
+      "lastModified": "2017-11-28",
+      "metadataLastUpdated": "2017-11-28"
     }
   }
 ]
