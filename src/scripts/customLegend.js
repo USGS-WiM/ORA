@@ -36,7 +36,7 @@ function addMapServerLegend(layerName, layerDetails) {
 
             //make list of layers for legend
             if (layerDetails.options.layers) {
-                //console.log(layerName, 'has visisble layers property')
+                //console.log(layerName, 'has visible layers property')
                 //if there is a layers option included, use that
                 var visibleLayers = layerDetails.options.layers;
             }
