@@ -859,12 +859,13 @@ require([
         const mapServiceRoot= "https://gis.wim.usgs.gov/arcgis/rest/services/GLCWRA/";
         const geomService = new GeometryService("https://gis.wim.usgs.gov/arcgis/rest/services/Utilities/Geometry/GeometryServer");
 
-        const normRestorationIndexLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "normalized", visible:false} );
-        normRestorationIndexLayer.setVisibleLayers([1]);
-        mapLayers.push(normRestorationIndexLayer);
-        mapLayerIds.push(normRestorationIndexLayer.id);
-        normRestorationIndexLayer.inLegendLayers = false;
-        //legendLayers.push ({layer:dikesLayer, title: "Dikes"});
+      //  const normRestorationIndexLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "normalized", visible:true} );
+      //  normRestorationIndexLayer.setVisibleLayers([1]);
+      //  mapLayers.push(normRestorationIndexLayer);
+      //  mapLayerIds.push(normRestorationIndexLayer.id);
+      //  legendLayers.push ({layer: normRestorationLayer, title: " "});
+      //  normRestorationIndexLayer.inLegendLayers = true;
+        
 
         const dikesLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "dikes", visible:false, minScale:100000} );
         dikesLayer.setVisibleLayers([11]);
@@ -992,13 +993,27 @@ require([
                 $("#meanScore").css('display', 'none');
             }
         }
+ 
+        const normRestorationIndexLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "normalized", visible:true} );
+        normRestorationIndexLayer.setVisibleLayers([1]);
+        mapLayers.push(normRestorationIndexLayer);
+        mapLayerIds.push(normRestorationIndexLayer.id);
+        legendLayers.push({layer:normRestorationIndexLayer , title:" "});
+        normRestorationIndexLayer.inLegendLayers = true;
 
         const studyAreaLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "studyArea", visible:true} );
         studyAreaLayer.setVisibleLayers([0]);
         mapLayers.push(studyAreaLayer);
         mapLayerIds.push(studyAreaLayer.id);
         legendLayers.push({layer:studyAreaLayer , title:" "});
-        studyAreaLayer.inLegendLayers = true;
+        studyAreaLayer.inLegendLayers = true; 
+
+        const waterMaskLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "waterMask", visible:true, opacity: 0.75} );
+        waterMaskLayer.setVisibleLayers([2]);
+        mapLayers.push(waterMaskLayer);
+        mapLayerIds.push(waterMaskLayer.id);
+        legendLayers.push({layer:waterMaskLayer , title:" "});
+        waterMaskLayer.inLegendLayers = true;
 
 /*         const GLRIWetlandsLayer = new ArcGISDynamicMapServiceLayer(mapServiceRoot + "GBRA/MapServer", {id: "GLRIWetlands", visible:true, minScale: 100000, maxScale: 10000 } );
         GLRIWetlandsLayer.setVisibleLayers([3]);
@@ -1090,11 +1105,11 @@ require([
         hydroperiodLayer.inLegendLayers = false;
         //legendLayers.push ({layer:hydroperiodLayer, title: "P1 - Hydroperiod"});
 
-        const waterMaskLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "waterMask", visible:true, opacity: 0.75} );
-        waterMaskLayer.setVisibleLayers([2]);
-        mapLayers.push(waterMaskLayer);
-        mapLayerIds.push(waterMaskLayer.id);
-        waterMaskLayer.inLegendLayers = false;
+      //  const waterMaskLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "waterMask", visible:true, opacity: 0.75} );
+      //  waterMaskLayer.setVisibleLayers([2]);
+      //  mapLayers.push(waterMaskLayer);
+      //  mapLayerIds.push(waterMaskLayer.id);
+      //  waterMaskLayer.inLegendLayers = true;
         // legendLayers.push ({layer:waterMaskLayer, title: ""});
         /////end parameters group
 
