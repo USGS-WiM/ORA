@@ -1201,7 +1201,7 @@ require([
         const mapServiceRoot= "https://gis.wim.usgs.gov/arcgis/rest/services/GLCWRA/";
         const geomService = new GeometryService("https://gis.wim.usgs.gov/arcgis/rest/services/Utilities/Geometry/GeometryServer");
 
-      //  const normRestorationIndexLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "normalized", visible:true} );
+      //  const normRestorationIndexLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "normalized", visible:true} );
       //  normRestorationIndexLayer.setVisibleLayers([1]);
       //  mapLayers.push(normRestorationIndexLayer);
       //  mapLayerIds.push(normRestorationIndexLayer.id);
@@ -1209,21 +1209,21 @@ require([
       //  normRestorationIndexLayer.inLegendLayers = true;
         
 
-        const dikesLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "dikes", visible:false, minScale:100000} );
+        const dikesLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "dikes", visible:false, minScale:100000} );
         dikesLayer.setVisibleLayers([11]);
         mapLayers.push(dikesLayer);
         mapLayerIds.push(dikesLayer.id);
         dikesLayer.inLegendLayers = false;
         //legendLayers.push ({layer:dikesLayer, title: "Dikes"});
 
-        const degFlowlinesLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "degFlowlines", visible:false, minScale:100000} );
+        const degFlowlinesLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "degFlowlines", visible:false, minScale:100000} );
         degFlowlinesLayer.setVisibleLayers([10]);
         mapLayers.push(degFlowlinesLayer);
         mapLayerIds.push(degFlowlinesLayer.id);
         degFlowlinesLayer.inLegendLayers = false;
         //legendLayers.push ({layer:degFlowlinesLayer, title: "Degree flowlines"});
 
-        const culvertsLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "culverts", visible:false, minScale:100000} );
+        const culvertsLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "culverts", visible:false, minScale:100000} );
         culvertsLayer.setVisibleLayers([9]);
         mapLayers.push(culvertsLayer);
         mapLayerIds.push(culvertsLayer.id);
@@ -1336,21 +1336,21 @@ require([
             }
         }
  
-        const normRestorationIndexLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "normalized", visible:true} );
+        const normRestorationIndexLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "normalized", visible:true} );
         normRestorationIndexLayer.setVisibleLayers([1]);
         mapLayers.push(normRestorationIndexLayer);
         mapLayerIds.push(normRestorationIndexLayer.id);
         legendLayers.push({layer:normRestorationIndexLayer , title:" "});
         normRestorationIndexLayer.inLegendLayers = true;
 
-        const studyAreaLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "studyArea", visible:true} );
+        const studyAreaLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "studyArea", visible:true} );
         studyAreaLayer.setVisibleLayers([0]);
         mapLayers.push(studyAreaLayer);
         mapLayerIds.push(studyAreaLayer.id);
         legendLayers.push({layer:studyAreaLayer , title:" "});
         studyAreaLayer.inLegendLayers = true; 
 
-        const waterMaskLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "waterMask", visible:true, opacity: 0.75} );
+        const waterMaskLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "waterMask", visible:true, opacity: 0.75} );
         waterMaskLayer.setVisibleLayers([2]);
         mapLayers.push(waterMaskLayer);
         mapLayerIds.push(waterMaskLayer.id);
@@ -1405,49 +1405,49 @@ require([
         ////end reference layers////////////////////////////////////////
 
         ///parameters group
-        const landuseLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "landuse", visible:false} );
+        const landuseLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "landuse", visible:false} );
         landuseLayer.setVisibleLayers([8]);
         mapLayers.push(landuseLayer );
         mapLayerIds.push(landuseLayer.id);
         landuseLayer.inLegendLayers = false;
         //legendLayers.push ({layer:landuseLayer , title: "P6 - Landuse"});
 
-        const imperviousSurfacesLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "imperviousSurfaces", visible:false} );
+        const imperviousSurfacesLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "imperviousSurfaces", visible:false} );
         imperviousSurfacesLayer.setVisibleLayers([7]);
         mapLayers.push(imperviousSurfacesLayer);
         mapLayerIds.push(imperviousSurfacesLayer.id);
         imperviousSurfacesLayer.inLegendLayers = false;
         //legendLayers.push ({layer:imperviousSurfacesLayer, title: "P5 - Impervious Surfaces"});
 
-        const conservedLandsLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "conservedLands", visible:false} );
+        const conservedLandsLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "conservedLands", visible:false} );
         conservedLandsLayer.setVisibleLayers([6]);
         mapLayers.push(conservedLandsLayer);
         mapLayerIds.push(conservedLandsLayer.id);
         conservedLandsLayer.inLegendLayers = false;
         //legendLayers.push ({layer:conservedLandsLayer, title: "P4 - Conserved Lands"});
 
-        const flowlineLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "flowline", visible:false} );
+        const flowlineLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "flowline", visible:false} );
         flowlineLayer.setVisibleLayers([5]);
         mapLayers.push(flowlineLayer);
         mapLayerIds.push(flowlineLayer.id);
         flowlineLayer.inLegendLayers = false;
         //legendLayers.push ({layer:flowlineLayer, title: "P3 - Flowline"});
 
-        const wetsoilsLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "wetsoils", visible:false} );
+        const wetsoilsLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "wetsoils", visible:false} );
         wetsoilsLayer.setVisibleLayers([4]);
         mapLayers.push(wetsoilsLayer);
         mapLayerIds.push(wetsoilsLayer.id);
         wetsoilsLayer.inLegendLayers = false;
         //legendLayers.push ({layer:wetsoilsLayer, title: "P2 - Wetsoils"});
 
-        const hydroperiodLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "hydroperiod", visible:false} );
+        const hydroperiodLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "hydroperiod", visible:false} );
         hydroperiodLayer.setVisibleLayers([3]);
         mapLayers.push(hydroperiodLayer);
         mapLayerIds.push(hydroperiodLayer.id);
         hydroperiodLayer.inLegendLayers = false;
         //legendLayers.push ({layer:hydroperiodLayer, title: "P1 - Hydroperiod"});
 
-      //  const waterMaskLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA_Incomplete/MapServer", {id: "waterMask", visible:true, opacity: 0.75} );
+      //  const waterMaskLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "waterMask", visible:true, opacity: 0.75} );
       //  waterMaskLayer.setVisibleLayers([2]);
       //  mapLayers.push(waterMaskLayer);
       //  mapLayerIds.push(waterMaskLayer.id);
