@@ -240,7 +240,7 @@ require([
     //following block forces map size to override problems with default behavior
     $(window).resize(function () {
         if ($("#legendCollapse").hasClass('in')) {
-            maxLegendHeight =  ($('#mapDiv').height()) * 0.90;
+            maxLegendHeight =  ($('#mapDiv').height());
             $('#legendElement').css('height', maxLegendHeight);
             $('#legendElement').css('max-height', maxLegendHeight);
             maxLegendDivHeight = ($('#legendElement').height()) - parseInt($('#legendHeading').css("height").replace('px',''));
@@ -868,21 +868,21 @@ require([
         
 
         const dikesLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "dikes", visible:false, minScale:100000} );
-        dikesLayer.setVisibleLayers([11]);
+        dikesLayer.setVisibleLayers([3]);
         mapLayers.push(dikesLayer);
         mapLayerIds.push(dikesLayer.id);
         dikesLayer.inLegendLayers = false;
         //legendLayers.push ({layer:dikesLayer, title: "Dikes"});
 
         const degFlowlinesLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "degFlowlines", visible:false, minScale:100000} );
-        degFlowlinesLayer.setVisibleLayers([10]);
+        degFlowlinesLayer.setVisibleLayers([2]);
         mapLayers.push(degFlowlinesLayer);
         mapLayerIds.push(degFlowlinesLayer.id);
         degFlowlinesLayer.inLegendLayers = false;
         //legendLayers.push ({layer:degFlowlinesLayer, title: "Degree flowlines"});
 
         const culvertsLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "culverts", visible:false, minScale:100000} );
-        culvertsLayer.setVisibleLayers([9]);
+        culvertsLayer.setVisibleLayers([1]);
         mapLayers.push(culvertsLayer);
         mapLayerIds.push(culvertsLayer.id);
         culvertsLayer.inLegendLayers = false;
@@ -995,21 +995,21 @@ require([
         }
  
         const normRestorationIndexLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "normalized", visible:true} );
-        normRestorationIndexLayer.setVisibleLayers([1]);
+        normRestorationIndexLayer.setVisibleLayers([13]);
         mapLayers.push(normRestorationIndexLayer);
         mapLayerIds.push(normRestorationIndexLayer.id);
         legendLayers.push({layer:normRestorationIndexLayer , title:" "});
         normRestorationIndexLayer.inLegendLayers = true;
 
         const studyAreaLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "studyArea", visible:true} );
-        studyAreaLayer.setVisibleLayers([0]);
+        studyAreaLayer.setVisibleLayers([12]);
         mapLayers.push(studyAreaLayer);
         mapLayerIds.push(studyAreaLayer.id);
         legendLayers.push({layer:studyAreaLayer , title:" "});
         studyAreaLayer.inLegendLayers = true; 
 
         const waterMaskLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "waterMask", visible:true, opacity: 0.75} );
-        waterMaskLayer.setVisibleLayers([2]);
+        waterMaskLayer.setVisibleLayers([5]);
         mapLayers.push(waterMaskLayer);
         mapLayerIds.push(waterMaskLayer.id);
         legendLayers.push({layer:waterMaskLayer , title:" "});
@@ -1064,42 +1064,42 @@ require([
 
         ///parameters group
         const landuseLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "landuse", visible:false} );
-        landuseLayer.setVisibleLayers([8]);
+        landuseLayer.setVisibleLayers([11]);
         mapLayers.push(landuseLayer );
         mapLayerIds.push(landuseLayer.id);
         landuseLayer.inLegendLayers = false;
         //legendLayers.push ({layer:landuseLayer , title: "P6 - Landuse"});
 
         const imperviousSurfacesLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "imperviousSurfaces", visible:false} );
-        imperviousSurfacesLayer.setVisibleLayers([7]);
+        imperviousSurfacesLayer.setVisibleLayers([10]);
         mapLayers.push(imperviousSurfacesLayer);
         mapLayerIds.push(imperviousSurfacesLayer.id);
         imperviousSurfacesLayer.inLegendLayers = false;
         //legendLayers.push ({layer:imperviousSurfacesLayer, title: "P5 - Impervious Surfaces"});
 
         const conservedLandsLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "conservedLands", visible:false} );
-        conservedLandsLayer.setVisibleLayers([6]);
+        conservedLandsLayer.setVisibleLayers([9]);
         mapLayers.push(conservedLandsLayer);
         mapLayerIds.push(conservedLandsLayer.id);
         conservedLandsLayer.inLegendLayers = false;
         //legendLayers.push ({layer:conservedLandsLayer, title: "P4 - Conserved Lands"});
 
         const flowlineLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "flowline", visible:false} );
-        flowlineLayer.setVisibleLayers([5]);
+        flowlineLayer.setVisibleLayers([8]);
         mapLayers.push(flowlineLayer);
         mapLayerIds.push(flowlineLayer.id);
         flowlineLayer.inLegendLayers = false;
         //legendLayers.push ({layer:flowlineLayer, title: "P3 - Flowline"});
 
         const wetsoilsLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "wetsoils", visible:false} );
-        wetsoilsLayer.setVisibleLayers([4]);
+        wetsoilsLayer.setVisibleLayers([7]);
         mapLayers.push(wetsoilsLayer);
         mapLayerIds.push(wetsoilsLayer.id);
         wetsoilsLayer.inLegendLayers = false;
         //legendLayers.push ({layer:wetsoilsLayer, title: "P2 - Wetsoils"});
 
         const hydroperiodLayer =  new ArcGISDynamicMapServiceLayer(mapServiceRoot + "LORA/MapServer", {id: "hydroperiod", visible:false} );
-        hydroperiodLayer.setVisibleLayers([3]);
+        hydroperiodLayer.setVisibleLayers([6]);
         mapLayers.push(hydroperiodLayer);
         mapLayerIds.push(hydroperiodLayer.id);
         hydroperiodLayer.inLegendLayers = false;
