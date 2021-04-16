@@ -1,10 +1,10 @@
 {
-  "name": "gbra",
+  "name": "lora",
   "version": "0.0.0",
-  "description": "green bay restoration assessment web application",
+  "description": "lake ontario restoration assessment web application",
   "repository": {
     "type": "git",
-    "url": "https://github.com/USGS-WiM/GBRA"
+    "url": "https://github.com/USGS-WiM/ORA"
   },
   "devDependencies": {
     "del": "^1.1.1",

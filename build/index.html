@@ -146,7 +146,7 @@
                       <div role="tabpanel" class="tab-pane active about-tab-content" id="aboutTabPane"></br>
 
                           <div class="wetland-pic tabText">
-                              <p>The Lake Ontario Restoration Assessment (LORA) model was co-developed by investigators in the Environmental Studies Program at the New College of Florida in
+                              <p>The Lake Ontario Restoration Assessment (LORA) model was developed by the USGS Upper Midwest Science Center based on methods provided by investigators in the Environmental Studies Program at the New College of Florida in
                                   Sarasota, Florida and the USGS - Great Lakes Science Center in Ann Arbor, Michigan. The web mapping application for interfacing with the LORA model was developed
                                   by developers on the Web Informatics and Mapping team.</p>
 
@@ -166,13 +166,15 @@
 
                       </div>
                       <div role="tabpanel" class="tab-pane tabText" id="metadataTabPane"></br>
-                          <b>Below is a list of LORA layers with description and source. For complete metadata, please visit the <a href='https://www.sciencebase.gov/catalog/item/57f406b1e4b0bc0bec032678' target='_blank'>USGS ScienceBase catalog item for GLCWRA <i class="fa fa-external-link" aria-hidden="true"></i></a></b><br />
+                          <b>Below is a list of LORA layers with their descriptions and sources. For complete metadata, please visit the <a href='https://www.sciencebase.gov/catalog/item/57f406b1e4b0bc0bec032678' target='_blank'>USGS ScienceBase catalog item for GLCWRA <i class="fa fa-external-link" aria-hidden="true"></i></a></b><br />
                           <br />
-                          <b>LORA Composite Index:</b> Restorability model developed by New College of Florida, USGS, TNC, and NOAA using detailed terrain and historical lake levels, and national soils, wetlands, land use, and land cover data. <br />
-                          Source: New College of Florida, USGS <br />
+                          <b>LORA Composite Index:</b> The Composite Index is the result of combining the source parameters through an ecological model. This model weights each of the parameters differently and runs them through an equation to create the composite index. Parameters 1 - 4 contribute to the index, while 5 and 6 detract from it. Any values covered by Parameter 0 are excluded from the composite index.
+
+                          To better understand the ecological model and the see the source code, go to New College of Florida's Github: https://github.com/newgaminfo/GLCWRA-Code <br />
+                          Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Study Area Boundary:</b> The study area dataset was created from the DEM dataset. The inland side of the study area was defined by taking the New York shoreline of Lake Ontario, including all land within 1 meter of elevation of the lake, and then include an additional 1 kilometer buffer. The lakeward side of the study area is simply a 2 kilometer buffer. For informational purposes only.<br />
-                          Source: New College of Florida and U.S. Geological Survey <br />
+                          <b>Study Area Boundary:</b> The study area dataset was created from the DEM dataset. The inland side of the study area was defined by taking the New York shoreline of Lake Ontario, including all land within 1 meter of elevation of the lake, and then include an additional 1 kilometer buffer. The lakeward side of the study area is simply a 2 kilometer buffer. <br />
+                          Source: USGS Upper Midwest Science Center <br />
                           <br />
                           <!-- <b>Oblique Aerial Imagery:</b> These points show the locations of linked ACOE oblique aerial photography from <a href='http://greatlakes.usace.army.mil' target='_blank'>greatlakes.usace.army.mil <i class="fa fa-external-link" aria-hidden="true"></i></a><br />
                           Source: US Army Corps of Engineers<br />
@@ -187,36 +189,36 @@
                           Source: New College of Florida <br />
                           <br /> -->
                           <span style="font-size: larger"><b>Parameters Group</b></span><br />
-                          <b>Water Mask (P0):</b> Areas excluded from the analysis but within study area boundary. Most areas are permanent or perennial water features previously mapped by the National Wetlands Inventory and the National Hydrographic Dataset. <br />
-                          Source: New College of Florida, USGS <br />
+                          <b>Water Mask (P0):</b> The water parameter was used to remove areas of open and deep water from consideration in the composite index because they are too deep to support a wetland habitat and are unlikely to be restored. <br />
+                          Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Hydroperiod (P1):</b> Developed as the first parameter to the restorability model. Hydroperiod is the percentage of time a coastal landscape area is inundated with surface water from Lake Ontario. Areas more frequently inundated are better for restoration.<br />
-                          Source: New College of Florida, USGS <br />
+                          <b>Hydroperiod (P1):</b> The hydroperiod dataset was derived from the Lake Ontario DEM and Lake Ontario water level records collected at the NOAA station in Oswego, New York. The hydroperiod data was used to identify areas which are more likely to be flooded as these areas are better suited to support a wetland habitat.<br />
+                          Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Wetland Soils (P2):</b> Developed as the second parameter to the restorability model. Wetland soils areas are mapped as existing wetlands or as hydrologic soils that support wetlands. These areas are better for restoration. <br />
-                          Source: New College of Florida, USGS <br />
+                          <b>Wetland Soils (P2):</b> The wetland soil data were used to identify areas that have hydric soils suitable for wetland restoration. <br />
+                          Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Flowline (P3):</b> Developed as the third parameter to the restorability model. Flowline areas are mapped as part of a drainage network connecting to Lake Ontario. These areas are better for restoration. <br />
-                          Source: New College of Florida, USGS <br />
+                          <b>Flowline (P3):</b> The flowline dataset is used to identify areas that are hydrologically connected to the lake because these areas are more likely to be within the hydroperiod (inundation zone) of Lake Ontario. <br />
+                          Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Conserved Lands (P4):</b> Developed as the fourth parameter to the restorability model representing areas within specified distances of protected areas. Regions closer to protected areas are better for restoration. <br />
-                          Source: New College of Florida, USGS <br />
+                          <b>Conserved Lands (P4):</b> The protected area data are composed of parks, Federal Waterfowl Production Areas, State and county wildlife areas and preserves. These areas are combined and buffered to create a layer representing protected areas and the regions surrounding them. Protected areas are better for restoration because they are protected by the U.S. government and considered to have an increased restoration likelihood. <br />
+                          Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Impervious Surfaces (P5):</b> Developed as the fifth parameter to the restorability model representing areas with impervious surfaces such as roads, parking lots and buildings. Impervious surfaces can be important societal infrastructure and expensive / difficult to modify for restoration. <br />
-                          Source: New College of Florida, USGS <br />
+                          <b>Impervious Surfaces (P5):</b> The impervious surface data are used to show where there are impervious surfaces within the study area, because those areas are not suitable for wetland restoration. <br />
+                          Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Land Use (P6):</b> Developed as the sixth parameter to the restorability model representing areas without impervious surfaces but high societal importance such as active agriculture, golf courses and parks. These areas can be expensive / difficult to modify for restoration. <br />
-                          Source: New College of Florida, USGS <br />
+                          <b>Land Use (P6):</b> The land use data were used to identify developed areas such as parks, golf courses and agricultural land because these areas are less likely to be restored. <br />
+                          Source: USGS Upper Midwest Science Center <br />
                           <br />
                           <span style="font-size: larger"><b>Hydro Conditioning Group</b></span><br />
-                          <b>Culverts:</b> Locations of potential culverts or other hydraulic control structures. These locations are important for understanding the hydrologic connections between a coastal area and the lake. <br />
-                          Source: New College of Florida, University of Michigan-Dearborn, The Nature Conservancy, NOAA, USGS <br />
+                          <b>Culverts:</b> The culvert dataset was created to display the locations of culverts. <br />
+                          Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Degree Flowlines:</b> Attribute flowline reaches used in model parameter three with the number of artificial disconnections between the reach and Lake Ontario. These data will help identify the degree of hydrologic separation between potential restoration areas and Lake Ontario.<br />
-                          Source: New College of Florida, University of Michigan-Dearborn, The Nature Conservancy, NOAA, USGS <br />
+                          <b>Degree Flowlines:</b> The degree flowlines dataset was created to indicate how many culverts each flowline passes through. The more road crossings on a flowline the more disconnected that area is from the lake and the less suitable it will be for restoration.<br />
+                          Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Dikes:</b> Modeled locations of dikes. Dikes are important control features for restoring coastal wetlands. <br />
-                          Source: New College of Florida, University of Michigan-Dearborn, The Nature Conservancy, NOAA, USGS <br />
+                          <b>Dikes:</b> The dike dataset was used to provide the extent and location of dikes within the study area, because they are an important factor in controlling water flow for restoring coastal wetlands. <br />
+                          Source: USGS Upper Midwest Science Center <br />
                       </div>
                       <div role="tabpanel" class="tab-pane tabText" id="disclaimerTabPane"></br>
                           <h3>Data Limitations</h3>
@@ -227,9 +229,15 @@
 
                       </div>
                       <div role="tabpanel" class="tab-pane tabText" id="contactTabPane"></br>
+                        
                           <p>
-                              <label>New College of Florida</label><br>
-                              <span>Justin Saarinen, Geographer<br>jsaarinen@ncf.edu</span>
+                              <label>USGS Upper Midwest Water Science Center</label><br>
+                              <span>Chris Sanocki, Geographer<br>sanocki@usgs.gov</span>
+                          </p>
+
+                          <p>
+                            <label>New College of Florida</label><br>
+                            <span>Justin Saarinen, Geographer<br>jsaarinen@ncf.edu</span>
                           </p>
 
                           <p>
@@ -254,7 +262,7 @@
 
                       </div>
                       <div role="tabpanel" class="tab-pane tabText" id="updatesTabPane"></br>
-                          <p>This application and the others in the GLCWRA project will be improved with additional features throughout 2017. To receive email updates of future feature additions and other improvements to this application, along with periodic news regarding latest efforts to improve coastal resilience in the region, please join the <a href='https://greatlakeslcc.org/content/join-upper-midwest-and-great-lakes-lcc-coastal-conservation-community' target='_blank' id="mailingList">Upper Midwest and Great Lakes LCC Coastal Conservation Community mailing list. <i class="fa fa-external-link" aria-hidden="true"></i></a> </p>
+                         <!-- <p>This application and the others in the GLCWRA project will be improved with additional features throughout 2017. To receive email updates of future feature additions and other improvements to this application, along with periodic news regarding latest efforts to improve coastal resilience in the region, please join the <a href='https://greatlakeslcc.org/content/join-upper-midwest-and-great-lakes-lcc-coastal-conservation-community' target='_blank' id="mailingList">Upper Midwest and Great Lakes LCC Coastal Conservation Community mailing list. <i class="fa fa-external-link" aria-hidden="true"></i></a> </p> -->
                       </div>
                   </div>
               </div>

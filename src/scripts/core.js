@@ -973,15 +973,15 @@ require([
 
 
             // Restorability blurb at the top of the zonalStatsModal
-            if ((results.MEAN) < 23) {
+            if ((results.MEAN) < 26) {
                 $("#meanScore").html('The selected area is unlikely to be restored');
                 $("#meanScore").css('background-color', '#FFFFFF');
                 $("#meanScore").css('color', 'black');
-            } else if ((23 < (results.MEAN)) && ((results.MEAN) < 50)) {
+            } else if ((25 < (results.MEAN)) && ((results.MEAN) < 51)) {
                 $("#meanScore").html('The selected area has low restorability');
                 $("#meanScore").css('background-color', '#F5FEBC');
                 $("#meanScore").css('color', 'black');
-            } else if ((50 < (results.MEAN)) && ((results.MEAN)  < 75)) {
+            } else if ((50 < (results.MEAN)) && ((results.MEAN)  < 76)) {
                 $("#meanScore").html('The selected area has medium restorability');
                 $("#meanScore").css('background-color', '#ABDE90');
                 $("#meanScore").css('color', 'black');
@@ -1014,20 +1014,6 @@ require([
         mapLayerIds.push(waterMaskLayer.id);
         legendLayers.push({layer:waterMaskLayer , title:" "});
         waterMaskLayer.inLegendLayers = true;
-
-/*         const GLRIWetlandsLayer = new ArcGISDynamicMapServiceLayer(mapServiceRoot + "GBRA/MapServer", {id: "GLRIWetlands", visible:true, minScale: 100000, maxScale: 10000 } );
-        GLRIWetlandsLayer.setVisibleLayers([3]);
-        mapLayers.push(GLRIWetlandsLayer);
-        //mapLayerIds.push(GLRIWetlandsLayer.id);
-        legendLayers.push({layer:GLRIWetlandsLayer, title:" "});
-        GLRIWetlandsLayer.inLegendLayers = true; */
-
-/*         const lakeLevelStationsLayer = new ArcGISDynamicMapServiceLayer(mapServiceRoot + "GBRA/MapServer", {id: "stations", visible:false } );
-        lakeLevelStationsLayer.setVisibleLayers([2]);
-        mapLayers.push(lakeLevelStationsLayer);
-        //mapLayerIds.push(GLRIWetlandsLayer.id);
-        legendLayers.push({layer:lakeLevelStationsLayer, title:" "});
-        lakeLevelStationsLayer.inLegendLayers = true; */
 
         var vegPopup = new InfoTemplate();
         vegPopup.setTitle("Wetland Biological Integrity");
@@ -1290,9 +1276,6 @@ require([
         });
         $('#contactTab').click(function(){
             gtag('event', 'click', {'event_category': 'About Modal','event_label': 'Contact'});
-        });
-        $('#updatesTab').click(function(){
-            gtag('event', 'click', {'event_category': 'About Modal','event_label': 'Get Updated'});
         });
         $('#mailingList').click(function(){
             gtag('event', 'click', {'event_category': 'About Modal','event_label': 'Link to Mailing List'});

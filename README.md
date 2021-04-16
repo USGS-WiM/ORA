@@ -1,14 +1,14 @@
-![WiM](wimlogo.png)
-# GBRA
-Green Bay Restoration Assessment, part of the Great Lakes Coastal Wetlands Restoration Assessment (GLCWRA) Project
+![WIM](wimlogo.png)
+# LORA
+Lake Ontario Restoration Assessment, part of the Great Lakes Coastal Wetlands Restoration Assessment (GLCWRA) Project
 
-The Green Bay Restoration Assessment (GBRA) model was co-developed by investigators in the Environmental Studies Program at the New College of Florida in Sarasota, Florida and the USGS - Great Lakes Science Center in Ann Arbor, Michigan. The web mapping application for interfacing with the GBRA model was developed by developers on the Web Informatics and Mapping team.
-
-The development of the GBRA has been supported by the Great Lakes Restoration Initiative, the Upper Midwest and Great Lakes Landscape Conservation Cooperative and the University of Michigan Water Center.
+The Lake Ontario Restoration Assessment (LORA) model was developed by the Upper Midwest Science Center based off of methods provided by the Environmental Studies Program at the New College of Florida in Sarasota, Florida and the USGS - Great Lakes Science Center in Ann Arbor, Michigan. The web mapping application for interfacing with the LORA model was made by developers on the Web Informatics and Mapping team.
 
 
 ___
 ## Developer Instructions
+
+use node version 11.15.0
 
 run `npm install` AND `bower install` to get dependencies after first cloning
 
@@ -20,7 +20,7 @@ run `npm install` AND `bower install` to get dependencies after first cloning
 
 ## Deployment
 
-Deploy to AWS S3 bucket glcwra.wim.usgs.gov, GBRA directory
+Deploy to AWS S3 bucket glcwra.wim.usgs.gov, LORA directory
 
 ## Built With
 
@@ -43,7 +43,7 @@ First push tags to origin: `git push origin --tags` then, after pull request, up
 * **[Blake Draper](https://www.usgs.gov/staff-profiles/blake-a-draper)**  - *Lead Developer* - [USGS Web Informatics & Mapping](https://wim.usgs.gov/)
 
 
-See also the list of [contributors](https://github.com/USGS-WiM/GBRA/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/USGS-WiM/ORA/graphs/contributors) who participated in this project.
 
 ## License
 
