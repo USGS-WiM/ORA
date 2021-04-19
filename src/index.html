@@ -159,14 +159,13 @@
                       <li role="presentation"><a id="metadataTab" href="#metadataTabPane" data-toggle="tab"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Layer Information</a></li>
                       <li role="presentation"><a id="disclaimerTab" href="#disclaimerTabPane" data-toggle="tab"><i class="fa fa-exclamation-circle"></i>&nbsp;Disclaimer</a></li>
                       <li role="presentation"><a id="contactTab" href="#contactTabPane" data-toggle="tab"><i class="fa fa-envelope"></i>&nbsp;Contact</a></li>
-                      <li role="presentation"><a id="updatesTab" href="#updatesTabPane" data-toggle="tab"><i class="fa fa-newspaper-o" aria-hidden="true"></i></i>&nbsp;Get Updated</a></li>
                   </ul>
                   <div class="tab-content">
                       <div role="tabpanel" class="tab-pane active about-tab-content" id="aboutTabPane"></br>
 
                           <div class="wetland-pic tabText">
                               <p>The Lake Ontario Restoration Assessment (LORA) model was developed by the USGS Upper Midwest Science Center based on methods provided by investigators in the Environmental Studies Program at the New College of Florida in
-                                  Sarasota, Florida and the USGS - Great Lakes Science Center in Ann Arbor, Michigan. The web mapping application for interfacing with the LORA model was developed
+                                  Sarasota, Florida and the USGS - Great Lakes Science Center in Ann Arbor, Michigan. The web mapping application for interfacing with the LORA model was created
                                   by developers on the Web Informatics and Mapping team.</p>
 
                               <p>The development of the LORA has been supported by the Great Lakes Restoration Initiative, the Upper Midwest and Great Lakes Landscape Conservation Cooperative and the University of Michigan Water Center.</p>
@@ -187,26 +186,14 @@
                       <div role="tabpanel" class="tab-pane tabText" id="metadataTabPane"></br>
                           <b>Below is a list of LORA layers with their descriptions and sources. For complete metadata, please visit the <a href='https://www.sciencebase.gov/catalog/item/57f406b1e4b0bc0bec032678' target='_blank'>USGS ScienceBase catalog item for GLCWRA <i class="fa fa-external-link" aria-hidden="true"></i></a></b><br />
                           <br />
-                          <b>LORA Composite Index:</b> The Composite Index is the result of combining the source parameters through an ecological model. This model weights each of the parameters differently and runs them through an equation to create the composite index. Parameters 1 - 4 contribute to the index, while 5 and 6 detract from it. Any values covered by Parameter 0 are excluded from the composite index.
+                          <b>LORA Composite Index:</b> The Composite Index is the result of combining the source parameters through an ecological model. This model weights each of the parameters individually and runs them through an equation to create the composite index. Parameters 1-4 contribute to the index, while 5 and 6 detract from it. Any areas covered by Parameter 0 are excluded from the composite index.
 
-                          To better understand the ecological model and the see the source code, go to New College of Florida's Github: https://github.com/newgaminfo/GLCWRA-Code <br />
+                          To better understand the ecological model and to see the source code, go to New College of Florida's Github: https://github.com/newgaminfo/GLCWRA-Code <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
                           <b>Study Area Boundary:</b> The study area dataset was created from the DEM dataset. The inland side of the study area was defined by taking the New York shoreline of Lake Ontario, including all land within 1 meter of elevation of the lake, and then include an additional 1 kilometer buffer. The lakeward side of the study area is simply a 2 kilometer buffer. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <!-- <b>Oblique Aerial Imagery:</b> These points show the locations of linked ACOE oblique aerial photography from <a href='http://greatlakes.usace.army.mil' target='_blank'>greatlakes.usace.army.mil <i class="fa fa-external-link" aria-hidden="true"></i></a><br />
-                          Source: US Army Corps of Engineers<br />
-                          <br /> -->
-                          <!-- <b>Lake Level Stations:</b> Locations of lake level measurements from NOAA CO-OPS. <br />
-                          Source: NOAA CO-OPS <br />
-                          <br /> -->
-                          <!-- <b>Wetland Biological Integrity:</b> Plant indicator scores are based on data collected as part of the Great Lakes Coastal Wetland Monitoring Program. Total vegetation indicator scores are based on 10 metrics that collectively evaluate the relative condition of each wetland. Metrics included entire-site and vegetation-zone specific calculations, which are combined into an overall site score. Metric and scoring calculations are described at <a href='http://greatlakeswetlands.org' target='_blank'>greatlakeswetlands.org <i class="fa fa-external-link" aria-hidden="true"></i></a> <br />
-                          Source:  Great Lakes Coastal Wetland Monitoring Program <br />
-                          <br /> -->
-                          <!-- <b>GLRI Wetland Restoration Areas:</b> Project boundaries digitized from GLRI habitat restoration database. http://habitat.glc.org/ <br />
-                          Source: New College of Florida <br />
-                          <br /> -->
                           <span style="font-size: larger"><b>Parameters Group</b></span><br />
                           <b>Water Mask (P0):</b> The water parameter was used to remove areas of open and deep water from consideration in the composite index because they are too deep to support a wetland habitat and are unlikely to be restored. <br />
                           Source: USGS Upper Midwest Science Center <br />
@@ -217,13 +204,13 @@
                           <b>Wetland Soils (P2):</b> The wetland soil data were used to identify areas that have hydric soils suitable for wetland restoration. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Flowline (P3):</b> The flowline dataset is used to identify areas that are hydrologically connected to the lake because these areas are more likely to be within the hydroperiod (inundation zone) of Lake Ontario. <br />
+                          <b>Flowline (P3):</b> The flowline dataset was used to identify areas that are hydrologically connected to the lake because these areas are more likely to be within the hydroperiod (inundation zone) of Lake Ontario. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Conserved Lands (P4):</b> The protected area data are composed of parks, Federal Waterfowl Production Areas, State and county wildlife areas and preserves. These areas are combined and buffered to create a layer representing protected areas and the regions surrounding them. Protected areas are better for restoration because they are protected by the U.S. government and considered to have an increased restoration likelihood. <br />
+                          <b>Conserved Lands (P4):</b> The protected area data are composed of parks, Federal Waterfowl Production Areas, State and county wildlife areas and preserves. These areas are combined and buffered to create a layer representing protected areas and the regions surrounding them. Protected areas are better for restoration because they are protected by the U.S. Government and are considered to have an increased restoration likelihood. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Impervious Surfaces (P5):</b> The impervious surface data are used to show where there are impervious surfaces within the study area, because those areas are not suitable for wetland restoration. <br />
+                          <b>Impervious Surfaces (P5):</b> The impervious surface data are used to show areas that are not suitable for wetland restoration. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
                           <b>Land Use (P6):</b> The land use data were used to identify developed areas such as parks, golf courses and agricultural land because these areas are less likely to be restored. <br />
@@ -265,7 +252,7 @@
                           </p>
 
                           <p>
-                              <label>USGS WiM</label><br>
+                              <label>USGS WIM</label><br>
                               <span>Blake Draper, Software Developer<br>bdraper@usgs.gov</span><br><br>
                               <span>Hans Vraga, Project Manager<br>hvraga@usgs.gov</span>
                           </p>

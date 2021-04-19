@@ -1,6 +1,6 @@
 {
-  "name": "gbra",
-  "description": "green bay restoration assessment web application",
+  "name": "lora",
+  "description": "lake ontario restoration assessment web application",
   "version": "v1.0.0-alpha.1",
   "dependencies": {
     "jquery": "^3.3.1",
@@ -13,7 +13,7 @@
     "bootstrap-confirmation2": "~2.1.3"
   },
   "authors": [
-    "Blake Draper, USGS WiM"
+    "Blake Draper, USGS WIM"
   ],
   "resolutions": {
     "bootstrap": "3.3.6"
