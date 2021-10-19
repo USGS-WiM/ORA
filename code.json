@@ -24,16 +24,8 @@
 
     "laborHours": null,
 
-    "tags": [
-      "glcwra",
-      "great lakes",
-      "science"
-    ],
-    "languages": [
-      "Javascript",
-      "HTML",
-      "CSS"
-    ],
+    "tags": ["glcwra", "great lakes", "science"],
+    "languages": ["Javascript", "HTML", "CSS"],
     "contact": {
       "name": "Blake Draper",
       "email": "bdraper@usgs.gov"
@@ -47,7 +39,7 @@
     "relatedCode": [
       {
         "name": "WLERA",
-        "codeUrl": "https://github.com/USGS-WiM/CRSRA",
+        "codeUrl": "https://github.com/USGS-WiM/WLERA",
         "isGovernmetnRepo": true
       },
       {
@@ -60,7 +52,6 @@
         "codeUrl": "https://github.com/USGS-WiM/SBRA",
         "isGovernmetnRepo": true
       }
-
     ],
     "date": {
       "lastModified": "2017-11-28",

@@ -20,7 +20,7 @@
         <!-- CSS for the mapping components -->
         <link rel="stylesheet" href="https://js.arcgis.com/3.13/dijit/themes/claro/claro.css">
         <link rel="stylesheet" href="https://js.arcgis.com/3.13/esri/css/esri.css">
-        <link rel="stylesheet" href="https://txpub.usgs.gov/DSS/search_api/2.0/api/search_api.css"/>
+        <link rel="stylesheet" href="https://txpub.usgs.gov/DSS/search_api/2.1/api/search_api.css"/>
 
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
@@ -40,7 +40,7 @@
         <!-- endbuild -->
 
         <script src="https://js.arcgis.com/3.13/"></script>
-        <script type="text/javascript" src="https://txpub.usgs.gov/DSS/search_api/2.0/api/search_api.min.js"></script>
+        <script type="text/javascript" src="https://txpub.usgs.gov/DSS/search_api/2.1/api/search_api.min.js"></script>
 
         <!-- bs-confirm is a small, single js doc library used as confirm on removeBookmarksButton. distinct from bootstrap-confirmation. -->
         <!-- build:js scripts/combined.js -->
@@ -132,12 +132,8 @@
                     <h4>Lake Ontario Restoration Assessment Web App</h4><i class="fa fa-exclamation-triangle fa-lg"></i> Please read the following message before continuing.
                 </div>
                 <div class="modal-body">
-                    <!--<h4>Welcome to the {Event Name} Data Viewer</h4><b>Please read the following message before continuing.</b>-->
-                    <p>Data are provisional and are subject to revision as the analysis is refined and new data products are added.</p>
-                    <p>Provisional data may be inaccurate due to input data or physical changes on the landscape. Subsequent review based on field inspections and analysis may result in significant revisions to the data.</p>
-                    <p>The data are being provided to meet the need for timely best science and are released on the condition that neither the USGS nor the U.S. Government may be held liable for any damages resulting from authorized or unauthorized use of the information. </p>
-                    <p>Data users are cautioned to consider carefully the provisional nature of the information before using it for decisions that concern personal or public safety or the conduct of business that involves substantial monetary or operational consequences.</p>
-                </div>
+               <p>These data are preliminary or provisional and are subject to revision. They are being provided to meet the need for timely best science. The data have not received final approval by the U.S. Geological Survey (USGS) and are provided on the condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from the authorized or unauthorized use of the data.</p>
+                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
@@ -168,7 +164,7 @@
                                   by developers on the Web Informatics and Mapping team.</p>
 
                               <p>The development of the LORA has been supported by the Great Lakes Restoration Initiative, the Upper Midwest and Great Lakes Landscape Conservation Cooperative and the University of Michigan Water Center.</p>
-
+                                <p>LORA version 1.0.0</p>
 
                           </div>
                           <br>
@@ -190,59 +186,51 @@
                           To better understand the ecological model and to see the source code, go to New College of Florida's Github: https://github.com/newgaminfo/GLCWRA-Code <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Study Area Boundary:</b> The study area dataset was created from the DEM dataset. The inland side of the study area was defined by taking the New York shoreline of Lake Ontario, including all land within 1 meter of elevation of the lake, and then include an additional 1 kilometer buffer. The lakeward side of the study area is simply a 2 kilometer buffer. <br />
+                          <b>Study Area Boundary:</b> The study area dataset is created from the DEM dataset. The inland side of the study area is defined by taking the New York shoreline of Lake Ontario, including all land within 1 meter of elevation of the lake, and then include an additional 1 kilometer buffer. The lakeward side of the study area is simply a 2 kilometer buffer. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
                           <span style="font-size: larger"><b>Parameters Group</b></span><br />
-                          <b>Water Mask (P0):</b> The water parameter was used to remove areas of open and deep water from consideration in the composite index because they are too deep to support a wetland habitat and are unlikely to be restored. <br />
+                          <b>Water Mask (P0):</b> The water parameter removes areas of open and deep water from consideration in the composite index because they are too deep to support a wetland habitat and are unlikely to be restored. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Hydroperiod (P1):</b> The hydroperiod dataset was derived from the Lake Ontario DEM and Lake Ontario water level records collected at the NOAA station in Oswego, New York. The hydroperiod data was used to identify areas which are more likely to be flooded as these areas are better suited to support a wetland habitat.<br />
+                          <b>Hydroperiod (P1):</b> The hydroperiod dataset is derived from the Lake Ontario DEM and Lake Ontario water level records collected at the NOAA station in Oswego, New York. The hydroperiod data are used to identify areas which are more likely to be flooded as these areas are better suited to support a wetland habitat.<br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Wetland Soils (P2):</b> The wetland soil data were used to identify areas that have hydric soils suitable for wetland restoration. <br />
+                          <b>Wetland Soils (P2):</b> The wetland soil data identifies areas that have hydric soils suitable for wetland restoration. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Flowline (P3):</b> The flowline dataset was used to identify areas that are hydrologically connected to the lake because these areas are more likely to be within the hydroperiod (inundation zone) of Lake Ontario. <br />
+                          <b>Flowline (P3):</b> The flowline dataset identifies areas that are hydrologically connected to the lake because these areas are more likely to be within the hydroperiod (inundation zone) of Lake Ontario. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
                           <b>Conserved Lands (P4):</b> The protected area data are composed of parks, Federal Waterfowl Production Areas, State and county wildlife areas and preserves. These areas are combined and buffered to create a layer representing protected areas and the regions surrounding them. Protected areas are better for restoration because they are protected by the U.S. Government and are considered to have an increased restoration likelihood. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Impervious Surfaces (P5):</b> The impervious surface data are used to show areas that are not suitable for wetland restoration. <br />
+                          <b>Impervious Surfaces (P5):</b> The impervious surface data shows where there are impervious surfaces within the study area, because those areas are not suitable for wetland restoration. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Land Use (P6):</b> The land use data were used to identify developed areas such as parks, golf courses and agricultural land because these areas are less likely to be restored. <br />
+                          <b>Land Use (P6):</b> The land use data identifies developed areas such as parks, golf courses and agricultural land because these areas are less likely to be restored. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
                           <span style="font-size: larger"><b>Hydro Conditioning Group</b></span><br />
-                          <b>Culverts:</b> The culvert dataset was created to display the locations of culverts. <br />
+                          <b>Culverts:</b> The culvert dataset displays the locations of culverts. <br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Degree Flowlines:</b> The degree flowlines dataset was created to indicate how many culverts each flowline passes through. The more road crossings on a flowline the more disconnected that area is from the lake and the less suitable it will be for restoration.<br />
+                          <b>Degree Flowlines:</b> The degree flowlines dataset indicates how many culverts each flowline passes through. The more road crossings on a flowline the more disconnected that area is from the lake and the less suitable it will be for restoration.<br />
                           Source: USGS Upper Midwest Science Center <br />
                           <br />
-                          <b>Dikes:</b> The dike dataset was used to provide the extent and location of dikes within the study area, because they are an important factor in controlling water flow for restoring coastal wetlands. <br />
+                          <b>Dikes:</b> The dike dataset displays the extent and location of dikes within the study area, because they are an important factor in controlling water flow for restoring coastal wetlands. <br />
                           Source: USGS Upper Midwest Science Center <br />
                       </div>
                       <div role="tabpanel" class="tab-pane tabText" id="disclaimerTabPane"></br>
                           <h3>Data Limitations</h3>
-                          <p>Data are provisional and are subject to revision as the analysis is refined and new data products are added.</p>
-                          <p>Provisional data may be inaccurate due to input data or physical changes on the landscape. Subsequent review based on field inspections and analysis may result in significant revisions to the data.</p>
-                          <p>The data are being provided to meet the need for timely best science and are released on the condition that neither the USGS nor the U.S. Government may be held liable for any damages resulting from authorized or unauthorized use of the information. </p>
-                          <p>Data users are cautioned to consider carefully the provisional nature of the information before using it for decisions that concern personal or public safety or the conduct of business that involves substantial monetary or operational consequences.</p>
-
+                           <p>These data are preliminary or provisional and are subject to revision. They are being provided to meet the need for timely best science. The data have not received final approval by the U.S. Geological Survey (USGS) and are provided on the condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from the authorized or unauthorized use of the data.</p>
+                     
                       </div>
                       <div role="tabpanel" class="tab-pane tabText" id="contactTabPane"></br>
-                        
-                          <p>
-                              <label>USGS Upper Midwest Water Science Center</label><br>
-                              <span>Chris Sanocki, Geographer<br>sanocki@usgs.gov</span>
-                          </p>
 
                           <p>
-                            <label>New College of Florida</label><br>
-                            <span>Justin Saarinen, Geographer<br>jsaarinen@ncf.edu</span>
+                            <label>USGS Upper Midwest Water Science Center</label><br>
+                            <span>Chris Sanocki, Geographer<br>sanocki@usgs.gov</span>
                           </p>
 
                           <p>
@@ -263,18 +251,13 @@
                           <img src="images/NCF_logo.jpg" alt="..."  style="width: 200px">
                           <img src="images/glri-logo.jpg" alt="..."  style="width: 200px">
                           <img src="images/Logo_UMGL.jpg" alt="..."  style="width: 200px">
-
-
-                      </div>
-                      <div role="tabpanel" class="tab-pane tabText" id="updatesTabPane"></br>
-                         <!-- <p>This application and the others in the GLCWRA project will be improved with additional features throughout 2017. To receive email updates of future feature additions and other improvements to this application, along with periodic news regarding latest efforts to improve coastal resilience in the region, please join the <a href='https://greatlakeslcc.org/content/join-upper-midwest-and-great-lakes-lcc-coastal-conservation-community' target='_blank' id="mailingList">Upper Midwest and Great Lakes LCC Coastal Conservation Community mailing list. <i class="fa fa-external-link" aria-hidden="true"></i></a> </p> -->
                       </div>
                   </div>
               </div>
 
               <div class="modal-footer">
                   <p style="color:black; margin-left:35px;text-align:left">
-                      For more information about the LORA web application please contact <a href="http://wim.usgs.gov/" target="_blank"><img src="images/wimvectorxs.png" id="wim_logo"></a> or visit Contact tab for project info.
+                      For more information about the LORA web application please contact <a href="http://wim.usgs.gov/" target="_blank"><img src="images/wimlogo.png" id="wim_logo"></a> or visit Contact tab for project info.
                   </p>
                   <button class=" btn btn-default close" type="button" data-dismiss="modal" aria-hidden="true" style="color:gray;" class="btn btn-default">Close</button>
               </div>
@@ -311,7 +294,7 @@
                             <code>Lat/Long (ie. '43.9,-72.1')</code>
                             <code>Street Address</code>
                             <br/><br/>
-                            Search provided by <a href="https://txpub.usgs.gov/dss/search_api/2.0/" target="_blank">USGS Search JavaScript API</a>
+                            Search provided by <a href="https://txpub.usgs.gov/dss/search_api/2.1/" target="_blank">USGS Search JavaScript API</a>
                           </div>
                     </form>
                 </div>
@@ -759,7 +742,7 @@
                   <img src="images/Logo_UMGL.jpg" alt="..."  class="img-rounded" style="width: 100px">
               </div>
 
-              <div class="identification pull-right">powered by  <a href="http://wim.usgs.gov/" target="_blank" id="wimPower">WiM</a></div>
+              <div class="identification pull-right">powered by  <a href="http://wim.usgs.gov/" target="_blank" id="wimPower">WIM</a></div>
 
           </div>
           <div class="col-md-9 col-lg-10 col-md-offset-3 col-lg-offset-2 no-col-padding keepit100">
